@@ -11,7 +11,7 @@ def ft_garden_data():
     plant2 = Plant("Sunflower", 80, 45)
     plant3 = Plant("Cactus", 15, 120)
 
-    print("=== Garden Plant Refistery ===")
+    print("=== Garden Plant Registery ===")
     print(f"{plant1.name}: {plant1.hight}cm, {plant1.age} days old")
     print(f"{plant2.name}: {plant2.hight}cm, {plant2.age} days old")
     print(f"{plant3.name}: {plant3.hight}cm, {plant3.age} days old")
