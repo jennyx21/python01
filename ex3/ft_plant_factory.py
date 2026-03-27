@@ -1,26 +1,34 @@
 class Plant:
 
-    def __init__(self, name: str, hight: int, days: int):
+    def __init__(self, name: str, height: int, days: int):
         self.name = name
-        self.hight = hight
+        self.height = height
         self.days = days
 
+    def grow(self, days):
+        self.height += 0.8 * days
 
-def ft_plant_factory():
+    def age(self, days):
+        self.days += days
+
+    def show(self):
+        print(f"Created: {self.name}: {round(self.height, 1)}cm, "
+              f"{self.days} days old")
+
+
+def ft_plant_factory() -> None:
     plants = [
         Plant("Rose", 25, 30),
         Plant("Sunflower", 80, 45),
         Plant("Cactus", 15, 120),
-        Plant("oak", 200, 365),
-        Plant("fern", 15, 120),
-        Plant("dandelions", 12, 200),
-        Plant("succulent", 5, 60)
+        Plant("Oak", 200, 365),
+        Plant("Fern", 15, 120)
         ]
 
     i: int = 0
     print("=== Plant Factory Output ===")
     for plant in plants:
-        print(f"crated: {plant.name} ({plant.hight}cm, {plant.days} days old)")
+        plant.show()
         i += 1
     print(f"Total Plants created: {i}")
 

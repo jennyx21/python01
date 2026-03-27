@@ -11,9 +11,9 @@ class Flower(Plant):
         super().__init__(name, height, days)
         self.color = color
 
-    def get_info(self):
-        return (f"{self.name} (Flower): {self.height}cm, {self.days} days "
-                f"old, {self.color} color")
+    def show(self):
+        print(f"{self.name}: {round(self.height, 1)}cm, "
+              f"{self.days} days old")
 
     def bloom(self):
         print(f"{self.name} is blooming beautifully!")
@@ -28,9 +28,9 @@ class Tree(Plant):
         print(f"{self.name} provides {self.trunk_diameter * 1.56:.0f} "
               f"square meters of shade")
 
-    def get_info(self):
-        return (f"{self.name} (Tree): {self.height}cm, {self.days} days old,"
-                f" {self.trunk_diameter}cm diameter")
+    def show(self):
+        print(f"{self.name}: {round(self.height, 1)}cm, "
+              f"{self.days} days old")
 
 
 class Vegteble(Plant):
@@ -40,12 +40,12 @@ class Vegteble(Plant):
         self.harvest_season = harvest_season
         self.nutritional_value = nutritional_value
 
-    def get_info(self):
-        return (f"{self.name} (Vegetable): {self.height}cm, {self.days}"
-                f" days old, {self.harvest_season} harvest")
+    def show(self):
+        print(f"{self.name}: {round(self.height, 1)}cm, "
+              f"{self.days} days old")
 
 
-def ft_plant_type():
+def ft_plant_type() -> None:
     flowers = [
         Flower("Rose", 25, 30, "red"),
         Flower("Dandelion", 20, 200, "yellow")
@@ -62,17 +62,22 @@ def ft_plant_type():
         ]
     print("=== Garden Plant Types ===\n")
     for flower in flowers:
-        print(flower.get_info())
+        print("=== Flower")
+        flower.show()
+        print(f"Color: {flower.color}")
+        print("[asking the rose to bloom]")
         flower.bloom()
         print()
 
     for tree in trees:
-        print(tree.get_info())
+        print("=== Tree")
+        tree.show()
         tree.produce_shade()
         print()
 
     for vegteble in vegtables:
-        print(vegteble.get_info())
+        print("=== Vegatables")
+        vegteble.show()
         print(f"{vegteble.name} is rich in Vitamin "
               f"{vegteble.nutritional_value}")
         print()

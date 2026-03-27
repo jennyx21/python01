@@ -1,4 +1,4 @@
-def ft_garden_intro():
+def ft_garden_intro() -> None:
     name: str = "rose"
     size: int = 25
     age: int = 30
