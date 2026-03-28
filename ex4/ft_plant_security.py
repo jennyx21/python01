@@ -1,6 +1,6 @@
 class SecurePlant:
 
-    def __init__(self, name: str, height: int, days: int):
+    def __init__(self, name: str, height: float, days: int):
         self.name = name
         self.height = height
         if days < 0:
