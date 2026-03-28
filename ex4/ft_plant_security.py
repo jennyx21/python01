@@ -1,6 +1,6 @@
 class SecurePlant:
 
-    def __init__(self, name: str, height: float, days: int):
+    def __init__(self, name: str, height: float, days: int) -> None:
         self.name = name
         self.height = height
         if days < 0:
@@ -14,11 +14,11 @@ class SecurePlant:
         else:
             self.height = height
 
-    def show(self):
+    def show(self) -> None:
         print(f"Plant created: {self.name}: {round(self.height, 1)}cm, "
               f"{self.days} days old \n")
 
-    def set_height(self, height: float):
+    def set_height(self, height: float) -> None:
         if height < 0:
             print("Error: Height can't be negative")
             print("security: Height update rejected")
@@ -26,7 +26,7 @@ class SecurePlant:
             self.height = height
             print(f"Height updated: {height}cm")
 
-    def set_age(self, days: int):
+    def set_age(self, days: int) -> None:
         if days < 0:
             print("Error: Age can't be negative")
             print("Security: Age update rejected")
